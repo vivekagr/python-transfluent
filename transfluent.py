@@ -225,6 +225,22 @@ class Transfluent(object):
         }
         return self._authed_request('GET', 'texts/translate', data)
 
+    def text_status(self, text_id, group_id, language):
+        data = {
+            'text_id': text_id,
+            'group_id': group_id,
+            'language': language
+        }
+        return self._authed_request('GET', 'text/status', data)
+
+    def text_read(self, text_id, group_id, language):
+        data = {
+            'text_id': text_id,
+            'group_id': group_id,
+            'language': language
+        }
+        return self._authed_request('GET', 'text', data)
+
     def file_save(self, identifier, language, file, type, format='UTF-8',
                   save_only_data=False):
         try:
