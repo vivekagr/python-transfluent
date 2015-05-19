@@ -4,3 +4,5 @@
 __pycache__/
 dist/
 htmlcov/
+.env/
+.idea/
