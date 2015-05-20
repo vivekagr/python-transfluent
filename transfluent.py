@@ -241,6 +241,15 @@ class Transfluent(object):
         }
         return self._authed_request('GET', 'text', data)
 
+    def text_word_count(self, text_id, group_id, language, level=2):
+        data = {
+            'text_id': text_id,
+            'group_id': group_id,
+            'language': language,
+            'level': level
+        }
+        return self._authed_request('GET', 'text/word/count', data)
+
     def file_save(self, identifier, language, file, type, format='UTF-8',
                   save_only_data=False):
         try:
